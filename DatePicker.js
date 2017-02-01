@@ -40,7 +40,10 @@ function DatePicker(id, callback) {
   	var prev = document.createElement("LI");
     prev.setAttribute("class", "prev");
     prev.innerHTML = "<";
-    prev.addEventListener("click", this.update(thisClass));
+    prev.onclick = function() {
+      //addEventListener("click", this.update(thisClass));
+      thisClass.render(new Date((thisClass.date_month - 1).toString() +"/1/" + thisClass.date_year));
+    }
     titleList.appendChild(prev);
     //this.render(new Date((this.date_month - 1).toString() +"/1/" + this.date_year))
     
