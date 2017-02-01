@@ -1,4 +1,4 @@
-DatePicker(id, callback) {
+function DatePicker(id, callback) {
     this.id = id;
 
     //if(one box get clikced) {
