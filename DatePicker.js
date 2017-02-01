@@ -21,8 +21,8 @@ function DatePicker(id, callback) {
   //}
 
 }
-  DatePicker.prototype.update = function() {
-    return console.log(this);
+  DatePicker.prototype.update = function(that) {
+    return console.log(that);
   }
 
   DatePicker.prototype.render = function(date) {
@@ -40,7 +40,7 @@ function DatePicker(id, callback) {
   	var prev = document.createElement("LI");
     prev.setAttribute("class", "prev");
     prev.innerHTML = "<";
-    prev.addEventListener("click", this.update);
+    prev.addEventListener("click", this.update(thisClass));
     titleList.appendChild(prev);
     //this.render(new Date((this.date_month - 1).toString() +"/1/" + this.date_year))
     
