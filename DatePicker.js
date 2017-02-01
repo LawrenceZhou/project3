@@ -70,7 +70,8 @@ function DatePicker(id, callback) {
     for (i = firstDay; i > 0; i--) {
         var prevDay = document.createElement("LI");
         prevDay.setAttribute("class", "days");
-        prevDay.innerHTML = (lastDaysNum - i).toString();
+        //prevDay.innerHTML = (lastDaysNum - i).toString();
+        prevDay.innerHTML = lastDaysNum.toString();
         daysList.appendChild(prevDay);
     }
 
