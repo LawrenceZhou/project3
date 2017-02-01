@@ -37,7 +37,11 @@ function DatePicker(id, callback) {
   	var title = document.createElement("LI");
   	title.setAttribute("style", "text-align:center");
     title.innerHTML = this.monthList[date.getMonth()];
-  	title.innerHTML += "<br><span style=\"font-size:18px\">2016</span>";
+  	title.innerHTML += "<br>";
+    var year = document.createElement("SPAN");
+    year.setAttribute("style", "font-size: 16px");
+    year.innerHTML = date.getFullYear();
+    title.appendChild(year);
 
   	list.appendChild(prev);
   	list.appendChild(next);
