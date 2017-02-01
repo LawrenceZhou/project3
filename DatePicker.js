@@ -16,7 +16,7 @@ function DatePicker(id, callback) {
     
     
     //if(one box get clikced) {
-   // 	callback(this.id, one box);
+   //   callback(this.id, one box);
     //}
   //}
 
@@ -30,14 +30,15 @@ function DatePicker(id, callback) {
     var date_day = date.getDate();
     this.date_month = date.getMonth();
     this.date_year = date.getFullYear();
-  	var calendar = document.getElementById(this.id);
-  	var monthRow = document.createElement("DIV");
-  	monthRow.setAttribute("class", "month");
+    var calendar = document.getElementById(this.id);
+    calendar.innerHTML = "";
+    var monthRow = document.createElement("DIV");
+    monthRow.setAttribute("class", "month");
 
-  	var titleList = document.createElement("UL");
+    var titleList = document.createElement("UL");
 
-  	//var prev = document.createElement("LI");
-  	var prev = document.createElement("LI");
+    //var prev = document.createElement("LI");
+    var prev = document.createElement("LI");
     prev.setAttribute("class", "prev");
     prev.innerHTML = "<";
     prev.onclick = function() {
@@ -48,26 +49,26 @@ function DatePicker(id, callback) {
     //this.render(new Date((this.date_month - 1).toString() +"/1/" + this.date_year))
     
 
-  	var next = document.createElement("LI");
-  	next.setAttribute("class", "next");
-  	next.innerHTML = ">";
+    var next = document.createElement("LI");
+    next.setAttribute("class", "next");
+    next.innerHTML = ">";
     titleList.appendChild(next);
     
 
-  	var title = document.createElement("LI");
-  	title.setAttribute("style", "text-align:center");
+    var title = document.createElement("LI");
+    title.setAttribute("style", "text-align:center");
     title.innerHTML = this.monthList[this.date_month];
-  	title.innerHTML += "<br>";
+    title.innerHTML += "<br>";
     var year = document.createElement("SPAN");
     year.setAttribute("style", "font-size: 20px");
     year.innerHTML = this.date_year;
     title.appendChild(year);
 
 
-  	
-  	titleList.appendChild(title);
-  	monthRow.appendChild(titleList);
-  	calendar.appendChild(monthRow);
+    
+    titleList.appendChild(title);
+    monthRow.appendChild(titleList);
+    calendar.appendChild(monthRow);
 
     var weekdaysList = document.createElement("UL");
     weekdaysList.setAttribute("class", "weekdays");
