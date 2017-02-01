@@ -102,7 +102,8 @@ function DatePicker(id, callback) {
         presDay.innerHTML = i.toString();
         presDay.map = {month: thisClass.date_month + 1, day: i, year: thisClass.date_year};
         presDay.onclick = function() {
-            if(thisClass.date_year === Date().getFullYear() && thisClass.date_month === Date().getMonth()) {
+            var today = new Date();
+            if(thisClass.date_year === today.getFullYear() && thisClass.date_month === today.getMonth()) {
                 thisClass.callback(thisClass.id, this.map);
             }
             
