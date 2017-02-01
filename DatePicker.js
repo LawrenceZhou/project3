@@ -34,10 +34,8 @@ function DatePicker(id, callback) {
   	prev.setAttribute("class", "prev");
   	prev.innerHTML = "<";
     titleList.appendChild(prev);
-    prev.onclick = function(){
-      this.render(new Date((date_month - 1).toString() +"/1/" + date_year));
-    }
-
+    prev.onclick = this.render(new Date((date_month - 1).toString() +"/1/" + date_year));
+    
   	var next = document.createElement("LI");
   	next.setAttribute("class", "next");
   	next.innerHTML = ">";
