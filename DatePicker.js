@@ -18,7 +18,7 @@ function DatePicker(id, callback) {
 
   	var next = document.createElement("LI");
   	next.setAttribute("class", "next");
-  	prev.innerHTML = ">";
+  	next.innerHTML = ">";
 
   	var title = document.createElement("LI");
   	title.setAttribute("style", "text-align:center");
