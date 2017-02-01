@@ -6,6 +6,8 @@ function DatePicker(id, callback) {
     //}
   //}
 
+  
+
   this.render = function(date) {
   	var calendar = document.getElementById(this.id);
   	var monthRow = document.createElement("DIV");
