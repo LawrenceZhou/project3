@@ -87,6 +87,8 @@ function DatePicker(id, callback) {
         daysList.appendChild(prevDay);
     }
 
+    console.log(thid.date_month);
+
     for (i = 1; i <= this.getMonthDaysNum(parseInt(this.date_year), this.date_month); i++) {
         var presDay = document.createElement("LI");
         presDay.setAttribute("class", "days");
