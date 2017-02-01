@@ -89,7 +89,7 @@ function DatePicker(id, callback) {
 
     console.log(parseInt(this.date_year), this.date_month, this.getMonthDaysNum(parseInt(this.date_year), this.date_month));
 
-    for (i = 1; i <= this.getMonthDaysNum(parseInt(this.date_year), this.date_month); i++) {
+    for (i = 1; i <= this.getMonthDaysNum(parseInt(this.date_year), this.date_month +1); i++) {
         var presDay = document.createElement("LI");
         presDay.setAttribute("class", "days");
         //prevDay.innerHTML = (lastDaysNum - i).toString();
