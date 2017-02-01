@@ -62,13 +62,15 @@ function DatePicker(id, callback) {
     var firstDate = new Date((date_month + 1).toString() +"/1/" + date_year);
     var firstDay = firstDate.getDay();
 
+    var lastDaysNum = this.getMonthDaysNum(parseInt(date_year), date_month - 1);
+
     var daysList = document.createElement("UL");
     daysList.setAttribute("class", "days");
 
-    for (i = 0; i < firstDay; i++) {
+    for (i = firstDay; i > 0; i--) {
         var prevDay = document.createElement("LI");
         prevDay.setAttribute("class", "days");
-        prevDay.innerHTML = "<";
+        prevDay.innerHTML = (lastDaysNum - i).toString();
         daysList.appendChild(prevDay);
     }
 
