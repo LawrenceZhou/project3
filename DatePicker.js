@@ -17,7 +17,7 @@ function DatePicker(id, callback) {
     this.prev.setAttribute("class", "prev");
     this.prev.innerHTML = "<";
     this.prev.onclick = function() {
-      console.log("sjfges");
+      console.log(this.render);
     }
     //if(one box get clikced) {
    // 	callback(this.id, one box);
