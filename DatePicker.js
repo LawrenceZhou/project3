@@ -9,7 +9,7 @@ function DatePicker(id, callback) {
   this.render = function(date) {
   	var calendar = document.getElementById(this.id);
   	var monthRow = document.createElement("DIV");
-  	monthRow.setAttribute("id", "month");
+  	monthRow.setAttribute("class", "month");
   	var list = document.createElement("UL");
 
   	var prev = document.createElement("LI");
