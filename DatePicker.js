@@ -52,6 +52,10 @@ function DatePicker(id, callback) {
     var next = document.createElement("LI");
     next.setAttribute("class", "next");
     next.innerHTML = ">";
+    next.onclick = function() {
+      //addEventListener("click", this.update(thisClass));
+      thisClass.render(new Date((thisClass.date_month + 2).toString() +"/1/" + thisClass.date_year));
+    }
     titleList.appendChild(next);
     
 
