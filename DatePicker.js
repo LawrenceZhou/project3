@@ -21,6 +21,9 @@ function DatePicker(id, callback) {
 
 
   this.render = function(date) {
+    var date_day = date.getDate();
+    var date_month = date.getMonth();
+    var date_year = date.getFullYear();
   	var calendar = document.getElementById(this.id);
   	var monthRow = document.createElement("DIV");
   	monthRow.setAttribute("class", "month");
@@ -37,11 +40,11 @@ function DatePicker(id, callback) {
 
   	var title = document.createElement("LI");
   	title.setAttribute("style", "text-align:center");
-    title.innerHTML = this.monthList[date.getMonth()];
+    title.innerHTML = this.monthList[date_month];
   	title.innerHTML += "<br>";
     var year = document.createElement("SPAN");
     year.setAttribute("style", "font-size: 20px");
-    year.innerHTML = date.getFullYear();
+    year.innerHTML = date_year;
     title.appendChild(year);
 
   	titleList.appendChild(prev);
@@ -52,9 +55,27 @@ function DatePicker(id, callback) {
 
     var weekdaysList = document.createElement("UL");
     weekdaysList.setAttribute("class", "weekdays");
-    weekdaysList.innerHTML = "<li>Mo</li><li>Tu</li><li>We</li>";
-    weekdaysList.innerHTML += "<li>Th</li><li>Fr</li><li>Sa</li><li>Su</li>";
+    weekdaysList.innerHTML = "<li>Su</li><li>Mo</li><li>Tu</li><li>We</li>";
+    weekdaysList.innerHTML += "<li>Th</li><li>Fr</li><li>Sa</li>";
     calendar.appendChild(weekdaysList);
+
+    var firstDate = new Date((date_month()+ 1).toString() +"/1/" + date_year);
+    var firstDay = firstDate.getDay();
+
+    var daysList = document.createElement("UL");
+    daysList.setAttribute("class", "days");
+
+    for (i = 0; i < firstDay; i++) {
+        var prevDay = document.createElement("LI");
+        prevDay.setAttribute("class", "days");
+        prevDay.innerHTML = "<";
+        daysList.appendChild(prevDay);
+    }
+
+    for (i = 1; i <= this.getMonthDaysNum(date_year.toInt(), date_month); i++) {
+
+    }
+
 
 //  <ul>
 //    <li class="prev">❮</li>
@@ -66,4 +87,9 @@ function DatePicker(id, callback) {
 //  </ul>
 //</div>
   }
+  this.getMonthDaysNum = function(year, month){  
+  month = parseInt(month, 10);  
+  var d= new Date(year, month, 0);  
+  return d.getDate();  
+}  
 }
