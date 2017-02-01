@@ -24,7 +24,8 @@ function DatePicker(id, callback) {
   	var calendar = document.getElementById(this.id);
   	var monthRow = document.createElement("DIV");
   	monthRow.setAttribute("class", "month");
-  	var list = document.createElement("UL");
+
+  	var titleList = document.createElement("UL");
 
   	var prev = document.createElement("LI");
   	prev.setAttribute("class", "prev");
@@ -43,11 +44,17 @@ function DatePicker(id, callback) {
     year.innerHTML = date.getFullYear();
     title.appendChild(year);
 
-  	list.appendChild(prev);
-  	list.appendChild(next);
-  	list.appendChild(title);
-  	monthRow.appendChild(list);
+  	titleList.appendChild(prev);
+  	titleList.appendChild(next);
+  	titleList.appendChild(title);
+  	monthRow.appendChild(titleList);
   	calendar.appendChild(monthRow);
+
+    var weekdaysList = document.createElement("UL");
+    weekdaysList.setAttribute("class", "weekdays");
+    weekdaysList.innerHTML = "<li>Mo</li><li>Tu</li><li>We</li>
+                              <li>Th</li><li>Fr</li><li>Sa</li>
+                              <li>Su</li>";
 
 //  <ul>
 //    <li class="prev">❮</li>
