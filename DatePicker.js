@@ -101,7 +101,7 @@ function DatePicker(id, callback) {
 
     console.log(parseInt(this.date_year), lastDate, lastDay);
 
-    for (i = 0; i <= 6 - lastDay && lastDay !== 0; i++) {
+    for (i = 1; i <= 7 - lastDay && lastDay !== 0; i++) {
         var nextDay = document.createElement("LI");
         nextDay.setAttribute("class", "days");
         //prevDay.innerHTML = (lastDaysNum - i).toString();
