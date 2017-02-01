@@ -1,6 +1,5 @@
 function DatePicker(id, callback) {
     this.id = id;
-    this.
     this.monthList =new Array(12);
     this.monthList[0]="January";
     this.monthList[1]="February";
