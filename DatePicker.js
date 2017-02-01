@@ -59,7 +59,7 @@ function DatePicker(id, callback) {
     weekdaysList.innerHTML += "<li>Th</li><li>Fr</li><li>Sa</li>";
     calendar.appendChild(weekdaysList);
 
-    var firstDate = new Date((date_month()+ 1).toString() +"/1/" + date_year);
+    var firstDate = new Date((date_month + 1).toString() +"/1/" + date_year);
     var firstDay = firstDate.getDay();
 
     var daysList = document.createElement("UL");
