@@ -86,7 +86,7 @@ function DatePicker(id, callback) {
     var lastDate = new Date((date_month + 2).toString() +"/1/" + date_year);
     var lastDay = lastDate.getDay();
 
-    for (i = 0; i <= 7 - lastDay && lastDay !== 0; i++) {
+    for (i = 0; i <= 6 - lastDay && lastDay !== 0; i++) {
         var nextDay = document.createElement("LI");
         nextDay.setAttribute("class", "days");
         //prevDay.innerHTML = (lastDaysNum - i).toString();
