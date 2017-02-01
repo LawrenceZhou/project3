@@ -113,7 +113,7 @@ function DatePicker(id, callback) {
   }
 
     DatePicker.prototype.getMonthDaysNum = function(year, month){  
-  month = parseInt(month, 10); 
+  month = parseInt(month, 10)+1; 
   if(month === -1) {
     month = 12;
     year = year - 1;
