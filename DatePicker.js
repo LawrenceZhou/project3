@@ -76,7 +76,11 @@ function DatePicker(id, callback) {
     }
 
     for (i = 1; i <= this.getMonthDaysNum(parseInt(date_year), date_month); i++) {
-
+        var presDay = document.createElement("LI");
+        presDay.setAttribute("class", "days");
+        //prevDay.innerHTML = (lastDaysNum - i).toString();
+        presDay.innerHTML = i.toString();
+        daysList.appendChild(presDay);
     }
 
     calendar.appendChild(daysList);
