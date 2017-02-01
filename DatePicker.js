@@ -33,10 +33,16 @@ function DatePicker(id, callback) {
   	var prev = document.createElement("LI");
   	prev.setAttribute("class", "prev");
   	prev.innerHTML = "<";
+    titleList.appendChild(prev);
+    prev.onclick = function(){
+      alert("prev");
+    }
 
   	var next = document.createElement("LI");
   	next.setAttribute("class", "next");
   	next.innerHTML = ">";
+    titleList.appendChild(next);
+    
 
   	var title = document.createElement("LI");
   	title.setAttribute("style", "text-align:center");
@@ -47,8 +53,8 @@ function DatePicker(id, callback) {
     year.innerHTML = date_year;
     title.appendChild(year);
 
-  	titleList.appendChild(prev);
-  	titleList.appendChild(next);
+
+  	
   	titleList.appendChild(title);
   	monthRow.appendChild(titleList);
   	calendar.appendChild(monthRow);
@@ -96,15 +102,6 @@ function DatePicker(id, callback) {
 
     calendar.appendChild(daysList);
 
-//  <ul>
-//    <li class="prev">❮</li>
-//    <li class="next">❯</li>
-//    <li style="text-align:center">
-//      August<br>
-//      <span style="font-size:18px">2016</span>
-//    </li>
-//  </ul>
-//</div>
   }
   this.getMonthDaysNum = function(year, month){  
   month = parseInt(month, 10); 
