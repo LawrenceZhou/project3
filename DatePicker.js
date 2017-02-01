@@ -1,13 +1,12 @@
-class DatePicker {
-  constructor(id, callback) {
+DatePicker(id, callback) {
     this.id = id;
 
-    if(one box get clikced) {
-    	callback(this.id, one box);
-    }
-  }
+    //if(one box get clikced) {
+   // 	callback(this.id, one box);
+    //}
+  //}
 
-  render(date) {
+  this.render = function(date) {
   	var calendar = document.getElementById(this.id);
   	var monthRow = document.createElement("DIV");
   	monthRow.setAttribute("id", "month");
