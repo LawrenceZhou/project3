@@ -25,7 +25,7 @@ function DatePicker(id, callback) {
 
 }
   DatePicker.prototype.update = function() {
-    return console.log(this.render);
+    return console.log(this);
   }
 
   DatePicker.prototype.render = function(date) {
