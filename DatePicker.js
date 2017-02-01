@@ -35,7 +35,7 @@ function DatePicker(id, callback) {
   	prev.innerHTML = "<";
     titleList.appendChild(prev);
     prev.onclick = function(){
-    parent.render(new Date((date_month - 1).toString() +"/1/" + date_year));
+        render(new Date((date_month - 1).toString() +"/1/" + date_year));
     }
 
   	var next = document.createElement("LI");
