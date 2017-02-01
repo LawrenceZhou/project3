@@ -16,9 +16,8 @@ function DatePicker(id, callback) {
     this.prev = document.createElement("LI");
     this.prev.setAttribute("class", "prev");
     this.prev.innerHTML = "<";
-    this.prev.onclick = function() {
-      console.log(this);
-    }
+    this.prev.addEventListener("click", function(){console.log(this.render);});
+    
     //if(one box get clikced) {
    // 	callback(this.id, one box);
     //}
