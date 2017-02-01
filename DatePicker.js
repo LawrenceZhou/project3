@@ -16,7 +16,7 @@ function DatePicker(id, callback) {
     this.prev = document.createElement("LI");
     this.prev.setAttribute("class", "prev");
     this.prev.innerHTML = "<";
-    this.prev.addEventListener("click", console.log(this.render));
+    this.prev.onClick = console.log(this.render));
     
     //if(one box get clikced) {
    // 	callback(this.id, one box);
@@ -106,7 +106,7 @@ function DatePicker(id, callback) {
     calendar.appendChild(daysList);
 
   }
-  
+
     DatePicker.prototype.getMonthDaysNum = function(year, month){  
   month = parseInt(month, 10); 
   if(month === -1) {
