@@ -63,7 +63,7 @@ function DatePicker(id, callback) {
     var firstDay = firstDate.getDay();
 
     var lastDaysNum = this.getMonthDaysNum(parseInt(date_year), date_month - 1);
-
+    console.log(parseInt(date_year), date_month - 1);
     var daysList = document.createElement("UL");
     daysList.setAttribute("class", "days");
 
