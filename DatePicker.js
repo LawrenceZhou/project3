@@ -1,18 +1,18 @@
 function DatePicker(id, callback) {
     this.id = id;
     this.monthList =new Array(12);
-    monthList[0]="January";
-    monthList[1]="February";
-    monthList[2]="March";
-    monthList[3]="April";
-    monthList[4]="May";
-    monthList[5]="June";
-    monthList[6]="July";
-    monthList[7]="August";
-    monthList[8]="September";
-    monthList[9]="October";
-    monthList[10]="November";
-    monthList[11]="December";
+    this.monthList[0]="January";
+    this.monthList[1]="February";
+    this.monthList[2]="March";
+    this.monthList[3]="April";
+    this.monthList[4]="May";
+    this.monthList[5]="June";
+    this.monthList[6]="July";
+    this.monthList[7]="August";
+    this.monthList[8]="September";
+    this.monthList[9]="October";
+    this.monthList[10]="November";
+    this.monthList[11]="December";
 
     //if(one box get clikced) {
    // 	callback(this.id, one box);
