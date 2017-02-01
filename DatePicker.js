@@ -92,7 +92,11 @@ function DatePicker(id, callback) {
 //</div>
   }
   this.getMonthDaysNum = function(year, month){  
-  month = parseInt(month, 10);  
+  month = parseInt(month, 10); 
+  if(month === -1) {
+    month = 12;
+    year = year - 1;
+  } 
   var d= new Date(year, month, 0);  
   return d.getDate();  
 }  
