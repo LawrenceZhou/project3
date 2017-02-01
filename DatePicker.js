@@ -1,5 +1,6 @@
 function DatePicker(id, callback) {
     this.id = id;
+    this.
     this.monthList =new Array(12);
     this.monthList[0]="January";
     this.monthList[1]="February";
@@ -17,7 +18,7 @@ function DatePicker(id, callback) {
     this.prev.setAttribute("class", "prev");
     this.prev.innerHTML = "<";
     this.prev.onclick = function(){
-        this.render(new Date((date_month - 1).toString() +"/1/" + date_year));
+        this.render(new Date((this.date_month - 1).toString() +"/1/" + this.date_year));
     }
     //if(one box get clikced) {
    // 	callback(this.id, one box);
@@ -27,8 +28,8 @@ function DatePicker(id, callback) {
 
   this.render = function(date) {
     var date_day = date.getDate();
-    var date_month = date.getMonth();
-    var date_year = date.getFullYear();
+    this.date_month = date.getMonth();
+    this.date_year = date.getFullYear();
   	var calendar = document.getElementById(this.id);
   	var monthRow = document.createElement("DIV");
   	monthRow.setAttribute("class", "month");
