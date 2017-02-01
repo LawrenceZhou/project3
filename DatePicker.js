@@ -16,7 +16,7 @@ function DatePicker(id, callback) {
     this.prev = document.createElement("LI");
     this.prev.setAttribute("class", "prev");
     this.prev.innerHTML = "<";
-    this.prev.addEventListener("click", this.render(new Date((this.date_month - 1).toString() +"/1/" + this.date_year));
+    this.prev.addEventListener("click", this.render(new Date((this.date_month - 1).toString() +"/1/" + this.date_year)));
     
     //if(one box get clikced) {
    // 	callback(this.id, one box);
