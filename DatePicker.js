@@ -54,6 +54,7 @@ function DatePicker(id, callback) {
     weekdaysList.setAttribute("class", "weekdays");
     weekdaysList.innerHTML = "<li>Mo</li><li>Tu</li><li>We</li>";
     weekdaysList.innerHTML += "<li>Th</li><li>Fr</li><li>Sa</li><li>Su</li>";
+    calendar.appendChild(weekdaysList);
 
 //  <ul>
 //    <li class="prev">❮</li>
