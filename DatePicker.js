@@ -16,7 +16,7 @@ function DatePicker(id, callback) {
     this.prev = document.createElement("LI");
     this.prev.setAttribute("class", "prev");
     this.prev.innerHTML = "<";
-    this.prev.addEventListener("click", console.log(this.render));
+    this.prev.addEventListener("click", this.update);
     
     //if(one box get clikced) {
    // 	callback(this.id, one box);
@@ -24,6 +24,9 @@ function DatePicker(id, callback) {
   //}
 
 }
+  DatePicker.prototype.update = () {
+    return console.log(this.render);
+  }
 
   DatePicker.prototype.render = function(date) {
     var date_day = date.getDate();
