@@ -84,7 +84,7 @@ function DatePicker(id, callback) {
     }
 
     var lastDate = new Date((date_month + 2).toString() +"/1/" + date_year);
-    var lastDay = nextDate.getDay();
+    var lastDay = lastDate.getDay();
 
     for (i = 1; i < lastDay; i++) {
         var nextDay = document.createElement("LI");
