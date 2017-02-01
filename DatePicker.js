@@ -87,7 +87,6 @@ function DatePicker(id, callback) {
         daysList.appendChild(prevDay);
     }
 
-    console.log(parseInt(this.date_year), this.date_month, this.getMonthDaysNum(parseInt(this.date_year), this.date_month));
 
     for (i = 1; i <= this.getMonthDaysNum(parseInt(this.date_year), this.date_month); i++) {
         var presDay = document.createElement("LI");
@@ -99,6 +98,8 @@ function DatePicker(id, callback) {
 
     var lastDate = new Date((this.date_month + 1).toString() +"/1/" + this.date_year);
     var lastDay = lastDate.getDay();
+
+    console.log(parseInt(this.date_year), lastDate, lastDay);
 
     for (i = 0; i <= 6 - lastDay && lastDay !== 0; i++) {
         var nextDay = document.createElement("LI");
