@@ -52,9 +52,8 @@ function DatePicker(id, callback) {
 
     var weekdaysList = document.createElement("UL");
     weekdaysList.setAttribute("class", "weekdays");
-    weekdaysList.innerHTML = "<li>Mo</li><li>Tu</li><li>We</li>
-                              <li>Th</li><li>Fr</li><li>Sa</li>
-                              <li>Su</li>";
+    weekdaysList.innerHTML = "<li>Mo</li><li>Tu</li><li>We</li>";
+    weekdaysList.innerHTML += "<li>Th</li><li>Fr</li><li>Sa</li><li>Su</li>";
 
 //  <ul>
 //    <li class="prev">❮</li>
