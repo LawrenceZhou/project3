@@ -1,5 +1,6 @@
 function DatePicker(id, callback) {
     this.id = id;
+    this.callback = callback;
     this.monthList =new Array(12);
     this.monthList[0]="January";
     this.monthList[1]="February";
@@ -21,9 +22,6 @@ function DatePicker(id, callback) {
   //}
 
 }
-  DatePicker.prototype.update = function(that) {
-    return console.log(that);
-  }
 
   DatePicker.prototype.render = function(date) {
     var thisClass = this;
@@ -102,13 +100,20 @@ function DatePicker(id, callback) {
         presDay.setAttribute("class", "days");
         //prevDay.innerHTML = (lastDaysNum - i).toString();
         presDay.innerHTML = i.toString();
+        presDay.map = {month: thisClass.date_month + 1, day: i, year: thisClass.date_year};
+        presDay.onclick = function() {
+            if(thisClass.date_year === Date().getFullYear() && thisClass.date_month === Date().getMonth()) {
+                thisClass.callback(thisClass.id, this.map);
+            }
+            
+        }
         daysList.appendChild(presDay);
     }
 
     var lastDate = new Date((this.date_month + 2).toString() +"/1/" + this.date_year);
     var lastDay = lastDate.getDay();
 
-    console.log(parseInt(this.date_year), lastDate, lastDay);
+    //console.log(parseInt(this.date_year), lastDate, lastDay);
 
     for (i = 1; i <= 7 - lastDay && lastDay !== 0; i++) {
         var nextDay = document.createElement("LI");
