@@ -65,7 +65,7 @@ function DatePicker(id, callback) {
     var daysList = document.createElement("UL");
     daysList.setAttribute("class", "days");
 
-    for (i = 0; i <= firstDay; i++) {
+    for (i = 0; i < firstDay; i++) {
         var prevDay = document.createElement("LI");
         prevDay.setAttribute("class", "days");
         prevDay.innerHTML = "<";
