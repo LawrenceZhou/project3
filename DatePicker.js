@@ -96,7 +96,7 @@ function DatePicker(id, callback) {
         daysList.appendChild(presDay);
     }
 
-    var lastDate = new Date((this.date_month + 1).toString() +"/1/" + this.date_year);
+    var lastDate = new Date((this.date_month + 2).toString() +"/1/" + this.date_year);
     var lastDay = lastDate.getDay();
 
     console.log(parseInt(this.date_year), lastDate, lastDay);
