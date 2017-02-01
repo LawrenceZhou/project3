@@ -1,4 +1,6 @@
-function TableTemplate () {
+"use strict";
+
+class TableTemplate {
 	static fillIn(id, dictionary, columnName) {
 		var id = id;
 		var dictionary = dictionary;
