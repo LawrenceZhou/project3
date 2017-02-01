@@ -72,7 +72,7 @@ function DatePicker(id, callback) {
         daysList.appendChild(prevDay);
     }
 
-    for (i = 1; i <= this.getMonthDaysNum(date_year.toInt(), date_month); i++) {
+    for (i = 1; i <= this.getMonthDaysNum(parseInt(date_year), date_month); i++) {
 
     }
 
