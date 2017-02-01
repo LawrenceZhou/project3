@@ -76,6 +76,7 @@ function DatePicker(id, callback) {
 
     }
 
+    calendar.appendChild(daysList);
 
 //  <ul>
 //    <li class="prev">❮</li>
