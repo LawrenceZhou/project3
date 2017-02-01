@@ -71,7 +71,7 @@ function DatePicker(id, callback) {
     weekdaysList.innerHTML += "<li>Th</li><li>Fr</li><li>Sa</li>";
     calendar.appendChild(weekdaysList);
 
-    var firstDate = new Date((this.date_month - 1).toString() +"/1/" + this.date_year);
+    var firstDate = new Date((this.date_month).toString() +"/1/" + this.date_year);
     var firstDay = firstDate.getDay();
 
     var lastDaysNum = this.getMonthDaysNum(parseInt(this.date_year), this.date_month - 1);
@@ -89,7 +89,7 @@ function DatePicker(id, callback) {
 
     console.log(parseInt(this.date_year), this.date_month, this.getMonthDaysNum(parseInt(this.date_year), this.date_month));
 
-    for (i = 1; i <= this.getMonthDaysNum(parseInt(this.date_year), this.date_month +1); i++) {
+    for (i = 1; i <= this.getMonthDaysNum(parseInt(this.date_year), this.date_month); i++) {
         var presDay = document.createElement("LI");
         presDay.setAttribute("class", "days");
         //prevDay.innerHTML = (lastDaysNum - i).toString();
