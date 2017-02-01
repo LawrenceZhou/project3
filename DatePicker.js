@@ -13,10 +13,7 @@ function DatePicker(id, callback) {
     this.monthList[9]="October";
     this.monthList[10]="November";
     this.monthList[11]="December";
-    this.prev = document.createElement("LI");
-    this.prev.setAttribute("class", "prev");
-    this.prev.innerHTML = "<";
-    this.prev.addEventListener("click", this.update.apply(this));
+    
     
     //if(one box get clikced) {
    // 	callback(this.id, one box);
@@ -29,6 +26,7 @@ function DatePicker(id, callback) {
   }
 
   DatePicker.prototype.render = function(date) {
+    var thisClass = this;
     var date_day = date.getDate();
     this.date_month = date.getMonth();
     this.date_year = date.getFullYear();
@@ -39,8 +37,11 @@ function DatePicker(id, callback) {
   	var titleList = document.createElement("UL");
 
   	//var prev = document.createElement("LI");
-  	
-    titleList.appendChild(this.prev);
+  	var prev = document.createElement("LI");
+    prev.setAttribute("class", "prev");
+    prev.innerHTML = "<";
+    prev.addEventListener("click", this.update.apply(thisClass));
+    titleList.appendChild(prev);
     //this.render(new Date((this.date_month - 1).toString() +"/1/" + this.date_year))
     
 
