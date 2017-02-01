@@ -23,8 +23,9 @@ function DatePicker(id, callback) {
     //}
   //}
 
+}
 
-  this.render = function(date) {
+  DatePicker.prototype.render = function(date) {
     var date_day = date.getDate();
     this.date_month = date.getMonth();
     this.date_year = date.getFullYear();
@@ -114,4 +115,4 @@ function DatePicker(id, callback) {
   var d= new Date(year, month, 0);  
   return d.getDate();  
 }  
-}
+
