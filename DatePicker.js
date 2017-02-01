@@ -42,7 +42,7 @@ function DatePicker(id, callback) {
     prev.innerHTML = "<";
     prev.onclick = function() {
       //addEventListener("click", this.update(thisClass));
-      thisClass.render(new Date((thisClass.date_month - 1).toString() +"/1/" + thisClass.date_year));
+      thisClass.render(new Date((thisClass.date_month).toString() +"/1/" + thisClass.date_year));
     }
     titleList.appendChild(prev);
     //this.render(new Date((this.date_month - 1).toString() +"/1/" + this.date_year))
