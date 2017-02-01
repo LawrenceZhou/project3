@@ -106,7 +106,8 @@ function DatePicker(id, callback) {
     calendar.appendChild(daysList);
 
   }
-  this.getMonthDaysNum = function(year, month){  
+  
+    DatePicker.prototype.getMonthDaysNum = function(year, month){  
   month = parseInt(month, 10); 
   if(month === -1) {
     month = 12;
