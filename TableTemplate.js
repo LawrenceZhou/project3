@@ -1,13 +1,12 @@
 "use strict";
 
 class TableTemplate {
-
 	static fillIn(id, dictionary, columnName) {
 		var table = document.getElementById(id);
 
 		if(arguments.length === 2) {
 			var tds = table.getElementsByTagName("td");
-			for (var i = 0; i < tds.length; i++) {
+			for(var i = 0; i < tds.length; i++) {
 				var template = new Cs142TemplateProcessor(tds[i].innerHTML);
 				tds[i].innerHTML = template.fillIn(dictionary);
 			}
@@ -16,20 +15,20 @@ class TableTemplate {
 			var headers = headersrow[0].getElementsByTagName("td");
 			var columnNumber = headers.length;
 			var columntoChange = 0;
-			for (var j = 0; j < headers.length; j++) {
+			for(var j = 0; j < headers.length; j++) {
 				if(dictionary[headers[j].innerHTML.slice(2, -2)] === columnName) {
 					columntoChange = j;
-					break;
 				}
+				var template = new Cs142TemplateProcessor(headers[j].innerHTML);
+				headers[j].innerHTML = template.fillIn(dictionary);
 			}
 
 			var rows = table.getElementsByTagName("tr");
-			for (j = 0; j < rows.length; j++) {
+			for(j = 1; j < rows.length; j++) {
 				var tdtoChange = rows[j].getElementsByTagName("td")[columntoChange];				
 				var temp = new Cs142TemplateProcessor(tdtoChange.innerHTML);
 				tdtoChange.innerHTML = temp.fillIn(dictionary);
 			}
 		}
-
 	}
 }
