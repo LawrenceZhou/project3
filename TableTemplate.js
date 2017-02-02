@@ -26,10 +26,8 @@ class TableTemplate {
 			}
 
 			var rows = table.getElementsByTagName("tr");
-			//console.log(rows.length);
 			for (var i = 0; i < rows.length; i++) {
-				var tdtoChange = rows[i].getElementsByTagName("td")[columntoChange];
-				//console.log(tdtoChange);				
+				var tdtoChange = rows[i].getElementsByTagName("td")[columntoChange];				
 				var template = new Cs142TemplateProcessor(tdtoChange.innerHTML);
 				tdtoChange.innerHTML = template.fillIn(dictionary);
 			}

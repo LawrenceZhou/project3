@@ -33,16 +33,15 @@ function DatePicker(id, callback) {
     prev.innerHTML = "<";
     prev.onclick = function() {
       thisClass.render(new Date((thisClass.date_month).toString() +"/1/" + thisClass.date_year));
-    }
+    };
     titleList.appendChild(prev);
 
     var next = document.createElement("LI");
     next.setAttribute("class", "next");
     next.innerHTML = ">";
     next.onclick = function() {
-      //addEventListener("click", this.update(thisClass));
       thisClass.render(new Date((thisClass.date_month + 2).toString() +"/1/" + thisClass.date_year));
-    }
+    };
     titleList.appendChild(next);
     
     var title = document.createElement("LI");
@@ -71,7 +70,7 @@ function DatePicker(id, callback) {
     var daysList = document.createElement("UL");
     daysList.setAttribute("class", "days");
 
-    for (i = firstDay; i > 0; i--) {
+    for (var i = firstDay; i > 0; i--) {
         var prevDay = document.createElement("LI");
         prevDay.setAttribute("class", "days");
         //prevDay.innerHTML = (lastDaysNum - i).toString();
@@ -79,24 +78,23 @@ function DatePicker(id, callback) {
         daysList.appendChild(prevDay);
     }
 
-    for (i = 1; i <= this.getMonthDaysNum(parseInt(this.date_year), this.date_month); i++) {
+    for (var i = 1; i <= this.getMonthDaysNum(parseInt(this.date_year), this.date_month); i++) {
         var presDay = document.createElement("LI");
         presDay.setAttribute("class", "days");
         presDay.innerHTML = i.toString();
         presDay.map = {month: thisClass.date_month + 1, day: i, year: thisClass.date_year};
         presDay.onclick = function() {
                 thisClass.callback(thisClass.id, this.map);         
-        }
+        };
         daysList.appendChild(presDay);
     }
 
     var lastDate = new Date((this.date_month + 2).toString() +"/1/" + this.date_year);
     var lastDay = lastDate.getDay();
 
-    for (i = 1; i <= 7 - lastDay && lastDay !== 0; i++) {
+    for (var i = 1; i <= 7 - lastDay && lastDay !== 0; i++) {
         var nextDay = document.createElement("LI");
         nextDay.setAttribute("class", "days");
-        //prevDay.innerHTML = (lastDaysNum - i).toString();
         nextDay.innerHTML = i.toString();
         daysList.appendChild(nextDay);
     }
@@ -104,7 +102,7 @@ function DatePicker(id, callback) {
   }
 
   DatePicker.prototype.getMonthDaysNum = function(year, month){  
-  month = parseInt(month, 10)+1; 
+  month = parseInt(month, 10) + 1; 
   if(month === -1) {
     month = 12;
     year = year - 1;
