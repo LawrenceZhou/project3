@@ -16,16 +16,16 @@ class TableTemplate {
 			var headers = headersrow[0].getElementsByTagName("td");
 			var columnNumber = headers.length;
 			var columntoChange = 0;
-			for (var i = 0; i < headers.length; i++) {
-				if(dictionary[headers[i].innerHTML.slice(2, -2)] === columnName) {
-					columntoChange = i;
+			for (var j = 0; j < headers.length; j++) {
+				if(dictionary[headers[j].innerHTML.slice(2, -2)] === columnName) {
+					columntoChange = j;
 					break;
 				}
 			}
 
 			var rows = table.getElementsByTagName("tr");
-			for (i = 0; i < rows.length; i++) {
-				var tdtoChange = rows[i].getElementsByTagName("td")[columntoChange];				
+			for (j = 0; j < rows.length; j++) {
+				var tdtoChange = rows[j].getElementsByTagName("td")[columntoChange];				
 				var temp = new Cs142TemplateProcessor(tdtoChange.innerHTML);
 				tdtoChange.innerHTML = temp.fillIn(dictionary);
 			}
