@@ -3,8 +3,6 @@
 class TableTemplate {
 
 	static fillIn(id, dictionary, columnName) {
-		var id = id;
-		var dictionary = dictionary;
 		var table = document.getElementById(id);
 
 		if(arguments.length === 2) {
