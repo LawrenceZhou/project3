@@ -16,7 +16,7 @@ class TableTemplate {
 			var headers = headersrow[0].getElementsByTagName("td");
 			var columnNumber = headers.length;
 			var columntoChange = 0;
-			for (i = 0; i < headers.length; i++) {
+			for (var i = 0; i < headers.length; i++) {
 				if(dictionary[headers[i].innerHTML.slice(2, -2)] === columnName) {
 					columntoChange = i;
 					break;
