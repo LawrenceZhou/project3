@@ -1,3 +1,5 @@
+"use strict";
+
 function DatePicker(id, callback) {
     this.id = id;
     this.callback = callback;
@@ -32,7 +34,11 @@ function DatePicker(id, callback) {
     prev.setAttribute("class", "prev");
     prev.innerHTML = "<";
     prev.onclick = function() {
-      thisClass.render(new Date((thisClass.date_month).toString() +"/1/" + thisClass.date_year));
+        if(thisClass.date_month === 0) {
+            thisClass.render(new Date("12/1/" + (parseInt(thisClass.date_year) - 1).toString()));
+        }else {
+            thisClass.render(new Date((thisClass.date_month).toString() +"/1/" + thisClass.date_year));
+        }
     };
     titleList.appendChild(prev);
 
@@ -40,7 +46,11 @@ function DatePicker(id, callback) {
     next.setAttribute("class", "next");
     next.innerHTML = ">";
     next.onclick = function() {
-      thisClass.render(new Date((thisClass.date_month + 2).toString() +"/1/" + thisClass.date_year));
+        if(thisClass.date_month === 11 ) {
+            thisClass.render(new Date("1/1/" + (parseInt(thisClass.date_year) + 1).toString()));
+        }else{
+            thisClass.render(new Date((thisClass.date_month + 2).toString() +"/1/" + thisClass.date_year));
+        }
     };
     titleList.appendChild(next);
     
@@ -73,7 +83,6 @@ function DatePicker(id, callback) {
     for (var i = firstDay; i > 0; i--) {
         var prevDay = document.createElement("LI");
         prevDay.setAttribute("class", "days");
-        //prevDay.innerHTML = (lastDaysNum - i).toString();
         prevDay.innerHTML = lastDaysNum.toString() - i + 1;
         daysList.appendChild(prevDay);
     }
@@ -90,6 +99,9 @@ function DatePicker(id, callback) {
     }
 
     var lastDate = new Date((this.date_month + 2).toString() +"/1/" + this.date_year);
+    if(this.date_month === 11) {
+        lastDate = new Date("1/1/" + (parseInt(this.date_year) + 1).toString());
+    }
     var lastDay = lastDate.getDay();
 
     for (i = 1; i <= 7 - lastDay && lastDay !== 0; i++) {
