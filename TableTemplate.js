@@ -16,7 +16,7 @@ class TableTemplate {
 			var headers = headersrow[0].getElementsByTagName("td");
 			var columnNumber = headers.length;
 			var columntoChange = 0;
-			for (var i = 0; i < headers.length; i++) {
+			for (i = 0; i < headers.length; i++) {
 				if(dictionary[headers[i].innerHTML.slice(2, -2)] === columnName) {
 					columntoChange = i;
 					break;
@@ -24,10 +24,10 @@ class TableTemplate {
 			}
 
 			var rows = table.getElementsByTagName("tr");
-			for (var i = 0; i < rows.length; i++) {
+			for (i = 0; i < rows.length; i++) {
 				var tdtoChange = rows[i].getElementsByTagName("td")[columntoChange];				
-				var template = new Cs142TemplateProcessor(tdtoChange.innerHTML);
-				tdtoChange.innerHTML = template.fillIn(dictionary);
+				var temp = new Cs142TemplateProcessor(tdtoChange.innerHTML);
+				tdtoChange.innerHTML = temp.fillIn(dictionary);
 			}
 		}
 
