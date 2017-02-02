@@ -78,7 +78,7 @@ function DatePicker(id, callback) {
         daysList.appendChild(prevDay);
     }
 
-    for (var i = 1; i <= this.getMonthDaysNum(parseInt(this.date_year), this.date_month); i++) {
+    for (i = 1; i <= this.getMonthDaysNum(parseInt(this.date_year), this.date_month); i++) {
         var presDay = document.createElement("LI");
         presDay.setAttribute("class", "days");
         presDay.innerHTML = i.toString();
@@ -92,14 +92,14 @@ function DatePicker(id, callback) {
     var lastDate = new Date((this.date_month + 2).toString() +"/1/" + this.date_year);
     var lastDay = lastDate.getDay();
 
-    for (var i = 1; i <= 7 - lastDay && lastDay !== 0; i++) {
+    for (i = 1; i <= 7 - lastDay && lastDay !== 0; i++) {
         var nextDay = document.createElement("LI");
         nextDay.setAttribute("class", "days");
         nextDay.innerHTML = i.toString();
         daysList.appendChild(nextDay);
     }
     calendar.appendChild(daysList);
-  }
+  };
 
   DatePicker.prototype.getMonthDaysNum = function(year, month){  
   month = parseInt(month, 10) + 1; 
@@ -109,4 +109,4 @@ function DatePicker(id, callback) {
   } 
   var d= new Date(year, month, 0);  
   return d.getDate();  
-}  
+};
