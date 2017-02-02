@@ -1,7 +1,9 @@
 "use strict";
 
-function Cs142TemplateProcessor(temp) {
-  this.template = temp;
+class Cs142TemplateProcessor {
+  constructor(temp) {
+    this.template = temp;
+  }
 }
 
 Cs142TemplateProcessor.prototype.fillIn = function(dic) {
