@@ -19,8 +19,8 @@ class TableTemplate {
 				if(dictionary[headers[j].innerHTML.slice(2, -2)] === columnName) {
 					columntoChange = j;
 				}
-				var template = new Cs142TemplateProcessor(headers[j].innerHTML);
-				headers[j].innerHTML = template.fillIn(dictionary);
+				var headersTemp = new Cs142TemplateProcessor(headers[j].innerHTML);
+				headers[j].innerHTML = headersTemp.fillIn(dictionary);
 			}
 
 			var rows = table.getElementsByTagName("tr");
