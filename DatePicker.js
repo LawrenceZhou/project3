@@ -81,7 +81,7 @@ DatePicker.prototype.render = function(date) {
 
     for(var i = firstDay; i > 0; i--) {
         var prevDay = document.createElement("LI");
-        prevDay.setAttribute("class", "days");
+        prevDay.setAttribute("class", "otherdays");
         prevDay.innerHTML = lastDaysNum.toString() - i + 1;
         daysList.appendChild(prevDay);
     }
@@ -105,7 +105,7 @@ DatePicker.prototype.render = function(date) {
 
     for(i = 1; i <= 7 - lastDay && lastDay !== 0; i++) {
         var nextDay = document.createElement("LI");
-        nextDay.setAttribute("class", "days");
+        nextDay.setAttribute("class", "otherdays");
         nextDay.innerHTML = i.toString();
         daysList.appendChild(nextDay);
     }
